@@ -20,6 +20,7 @@ class Hdf4 < Formula
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "cmake", "--build", ".", "--parallel", cores.to_s
       system "cmake", "--install", "."
+      system "find #{buildpath}/install -name '*.a' -delete"
     end
     prefix.install Dir["install/*"]
   end
