@@ -11,8 +11,6 @@ class Nexus < Formula
   depends_on "git" => :build
   depends_on "mlz/packages/hdf4"
   depends_on "hdf5"
-  depends_on "jpeg"
-  depends_on "zlib"
 
   def install
     cores = `sysctl -n hw.ncpu`.strip

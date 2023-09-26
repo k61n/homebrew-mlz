@@ -9,7 +9,7 @@ class Hdf4 < Formula
 
   depends_on "cmake" => :build
   depends_on "git" => :build
-  depends_on "jpeg"
+  depends_on "jpeg-turbo"
   depends_on "zlib"
 
   def install
