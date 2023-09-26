@@ -20,12 +20,12 @@ class Nexus < Formula
       hdf4_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf4`.strip
       hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "cmake .. -DCMAKE_BUILD_TYPE=Release " +
+               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
                "-DENABLE_HDF4=1 -DHDF4_ROOT=#{hdf4_path} " +
                "-DENABLE_HDF5=1 -DHDF5_ROOT=#{hdf5_path} " +
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
-      system "cmake", "--build", ".", "--parallel", cores.to_s
-      system "cmake", "--install", "."
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
     prefix.install Dir["install/*"]
   end

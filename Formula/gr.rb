@@ -25,16 +25,15 @@ class Gr < Formula
 
   def install
     cores = `sysctl -n hw.ncpu`.strip
-    cmake = `#{HOMEBREW_PREFIX}/bin/brew --prefix cmake`.strip
     mkdir "build" do
       qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
       qt6_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@6`.strip
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "#{cmake}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
+               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
                "-DCMAKE_PREFIX_PATH='#{qt5_path};#{qt6_path}' " +
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
-      system "cmake", "--build", ".", "--parallel", cores.to_s
-      system "cmake", "--install", "."
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
     prefix.install Dir["install/*"]
   end

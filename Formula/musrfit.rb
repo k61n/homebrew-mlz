@@ -24,21 +24,22 @@ class Musrfit < Formula
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     mkdir "build" do
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "cmake .. -DCMAKE_BUILD_TYPE=Release " +
+               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
                "-Dnexus=1 -DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus " +
                "-Dqt_version=5 -DCMAKE_PREFIX_PATH=#{qt5_path} " +
                "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json " +
                "-DCMAKE_INSTALL_PREFIX=./install -Dqt_based_tools=0"
-      system "cmake", "--build", ".", "--parallel", cores.to_s
-      system "cmake", "--install", "."
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
       prefix.install Dir["install/*"]
+      system "rm", "-rf", "*"
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "cmake .. -DCMAKE_BUILD_TYPE=Release " +
+               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
                "-Dnexus=1 -DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus " +
                "-Dqt_version=5 -DCMAKE_PREFIX_PATH=#{qt5_path} " +
                "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json " +
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install -Dqt_based_tools=1"
-      system "cmake", "--build", ".", "--parallel", cores.to_s
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       prefix.install "src/musredit_qt5/mupp/mupp.app"
       prefix.install "src/musredit_qt5/musredit/musredit.app"
       prefix.install "src/musredit_qt5/musrStep/musrStep.app"
