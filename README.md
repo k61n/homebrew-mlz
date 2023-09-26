@@ -5,6 +5,7 @@ This tap contains following packages:
  - hdf4 [v4.2.16](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.1](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus [v4.4.3](https://github.com/nexusformat/code)
+ - omniorb [v4.2.5](https://sourceforge.net/projects/omniorb)
 
 # Installation
 ```bash
