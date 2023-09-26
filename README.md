@@ -15,3 +15,12 @@ This tap contains following packages:
 brew tap mlz/packages https://forge.frm2.tum.de/review/mlz/packages/homebrew
 brew install [package]
 ```
+
+# Notes
+
+Gr framework relies on both qt@5 and qt@6, in order for compilation to succeed
+```bash
+brew install qt@5 qt
+brew unlink qt@5 qt
+brew install gr python-gr
+```
