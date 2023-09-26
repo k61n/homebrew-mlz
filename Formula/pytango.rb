@@ -14,7 +14,7 @@ class Pytango < Formula
   depends_on "python"
 
   def install
-    system "curl https://raw.githubusercontent.com/k61n/homebrew-pytango/main/patch " +
+    system "curl https://raw.githubusercontent.com/k61n/homebrew-mlz/main/patches/pytango " +
              "-o #{buildpath}/patch"
     system "#{HOMEBREW_PREFIX}/bin/git apply patch"
     python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
