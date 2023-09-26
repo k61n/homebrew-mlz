@@ -7,8 +7,9 @@ This tap contains following packages:
  - nexus [v4.4.3](https://github.com/nexusformat/code)
  - omniorb [v4.2.5](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://www.tango-controls.org)
+ - cpptango [v9.4.2](https://www.tango-controls.org)
 
 # Installation
 ```bash
-brew install k61n/mlz/...
+brew install k61n/mlz/[package]
 ```
