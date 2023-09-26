@@ -6,6 +6,7 @@ This tap contains following packages:
  - musrfit [v1.9.1](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus [v4.4.3](https://github.com/nexusformat/code)
  - omniorb [v4.2.5](https://sourceforge.net/projects/omniorb)
+ - tangoidl [v5.1.2](https://www.tango-controls.org)
 
 # Installation
 ```bash
