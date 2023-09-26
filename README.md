@@ -8,6 +8,7 @@ This tap contains following packages:
  - omniorb [v4.2.5](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://www.tango-controls.org)
  - cpptango [v9.4.2](https://www.tango-controls.org)
+ - pytango [v9.4.2](https://www.tango-controls.org)
 
 # Installation
 ```bash
