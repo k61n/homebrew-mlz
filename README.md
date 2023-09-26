@@ -24,3 +24,16 @@ brew install qt@5 qt
 brew unlink qt@5 qt
 brew install gr python-gr
 ```
+
+Omniorb requires subversion, but due to brew bug one should install subversion
+beforehand. Omniorb has been added officially to homebrew, however the version
+required for cppTango lib is 4.2.5. This requires omniorb to be "pinned" to
+avoid that brew overwrites it with "official" package on update.
+This formula contains fix [6639](https://sourceforge.net/p/omniorb/svn/6639/)
+which solves floating point values conversion on arm processors, which has not
+yet been included in release of 4.2 branch.
+```bash
+brew install subversion
+brew install omniorb
+brew pin omniorb
+```
