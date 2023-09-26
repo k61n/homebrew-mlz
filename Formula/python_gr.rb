@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Python_gr < Formula
+class PythonGr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/python-gr.git",
