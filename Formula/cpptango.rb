@@ -11,8 +11,8 @@ class Cpptango < Formula
   depends_on "git" => :build
   depends_on "subversion" => :build
   depends_on "cppzmq"
-  depends_on "k61n/mlz/omniorb"
-  depends_on "k61n/mlz/tangoidl"
+  depends_on "mlz/packages/omniorb"
+  depends_on "mlz/packages/tangoidl"
   depends_on "zeromq"
 
   def install

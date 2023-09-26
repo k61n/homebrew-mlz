@@ -7,7 +7,7 @@ class PythonGr < Formula
       tag: "v1.23.2"
   version "1.23.2"
 
-  depends_on "k61n/mlz/gr"
+  depends_on "mlz/packages/gr"
   depends_on "numpy"
   depends_on "python"
 

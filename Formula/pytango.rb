@@ -10,13 +10,13 @@ class Pytango < Formula
   depends_on "git" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "k61n/mlz/cpptango"
+  depends_on "mlz/packages/cpptango"
+  depends_on "numpy"
   depends_on "python"
 
   def install
-    system "curl https://raw.githubusercontent.com/k61n/homebrew-mlz/main/patches/pytango " +
-             "-o #{buildpath}/patch"
-    system "#{HOMEBREW_PREFIX}/bin/git apply patch"
+    repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
+    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/pytango"
     python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
     boost_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     boos_python_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost-python3`.strip

@@ -12,5 +12,6 @@ This tap contains following packages:
 
 # Installation
 ```bash
-brew install k61n/mlz/[package]
+brew tap mlz/packages https://forge.frm2.tum.de/review/mlz/packages/homebrew
+brew install [package]
 ```

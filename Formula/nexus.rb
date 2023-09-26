@@ -9,7 +9,7 @@ class Nexus < Formula
 
   depends_on "cmake" => :build
   depends_on "git" => :build
-  depends_on "k61n/mlz/hdf4"
+  depends_on "mlz/packages/hdf4"
   depends_on "hdf5"
   depends_on "jpeg"
   depends_on "zlib"
