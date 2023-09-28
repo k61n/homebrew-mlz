@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class Nexus < Formula
-  desc "Data format library for neutron, x-ray, and muon experiments."
-  homepage "https://github.com/nexusformat/code/"
+class NexusFormat < Formula
+  desc "C++ data format library for neutron, x-ray, and muon experiments."
+  homepage "https://www.nexusformat.org/"
   url "https://github.com/nexusformat/code.git",
       tag: "v4.4.3"
   version "4.4.3"

@@ -15,7 +15,7 @@ class Musrfit < Formula
   depends_on "fftw"
   depends_on "qt@5"
   depends_on "root"
-  depends_on "mlz/packages/nexus"
+  depends_on "mlz/packages/nexus-format"
 
   def install
     cores = `sysctl -n hw.ncpu`.strip

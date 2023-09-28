@@ -4,7 +4,7 @@ This tap contains following packages:
  - python-gr [v1.23.2](https://gr-framework.org)
  - hdf4 [v4.2.16](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.1](http://lmu.web.psi.ch/musrfit/user/html/index.html)
- - nexus [v4.4.3](https://github.com/nexusformat/code)
+ - nexus-format [v4.4.3](https://www.nexusformat.org)
  - omniorb [v4.2.5](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://www.tango-controls.org)
  - cpptango [v9.4.2](https://www.tango-controls.org)
