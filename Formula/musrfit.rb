@@ -20,7 +20,7 @@ class Musrfit < Formula
   def install
     cores = `sysctl -n hw.ncpu`.strip
     qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
-    nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus`.strip
+    nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus-format`.strip
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     mkdir "build" do
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
