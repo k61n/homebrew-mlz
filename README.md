@@ -8,6 +8,7 @@ This tap contains following packages:
  - omniorb@4.2.5 [v4.2.5](https://sourceforge.net/p/omniorb/svn/HEAD/tree/branches/4_2/omniORB/) - [homepage](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
  - cpptango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
+ - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - pytango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
 
 # Installation
@@ -39,3 +40,7 @@ yet been included in release of 4.2 branch.
 brew install subversion
 brew install omniorb@4.2.5
 ```
+
+Tango
+-----
+Consider `cpptango@9.4.2` and `pytango@9.4.2` for now.
