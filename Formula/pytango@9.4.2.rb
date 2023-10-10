@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Pytango < Formula
+class PytangoAT942 < Formula
   desc "Python module for cppTango C++ libraries"
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/pytango.git",
@@ -10,7 +10,7 @@ class Pytango < Formula
   depends_on "git" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "mlz/packages/cpptango"
+  depends_on "mlz/packages/cpptango@9.4.2"
   depends_on "numpy"
   depends_on "python"
 
@@ -21,8 +21,8 @@ class Pytango < Formula
     boost_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     boos_python_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost-python3`.strip
     cppzmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
-    omni_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb`.strip
-    tango_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cpptango`.strip
+    omni_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb@4.2.5`.strip
+    tango_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cpptango@9.4.2`.strip
     zmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
     system "BOOST_ROOT=#{boost_root} BOOST_PYTHON_ROOT=#{boos_python_root} " +
              "BOOST_PYTHON_LIB=boost_python311 " +

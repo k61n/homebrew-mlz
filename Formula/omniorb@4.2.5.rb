@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Omniorb < Formula
+class OmniorbAT425 < Formula
   desc "CORBA object request broker for C++."
   homepage "https://sourceforge.net/projects/omniorb/"
   url "svn://svn.code.sf.net/p/omniorb/svn/branches/4_2/omniORB"

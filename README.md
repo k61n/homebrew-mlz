@@ -5,10 +5,10 @@ This tap contains following packages:
  - hdf4 [v4.2.16](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.1](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
- - omniorb [v4.2.5](https://sourceforge.net/p/omniorb/svn/HEAD/tree/branches/4_2/omniORB/) - [homepage](https://sourceforge.net/projects/omniorb)
+ - omniorb@4.2.5 [v4.2.5](https://sourceforge.net/p/omniorb/svn/HEAD/tree/branches/4_2/omniORB/) - [homepage](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
- - cpptango [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
- - pytango [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
+ - cpptango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
+ - pytango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
 
 # Installation
 ```bash
@@ -31,13 +31,11 @@ omniORB
 -------
 Omniorb requires subversion, but due to brew bug one should install subversion
 beforehand. Omniorb has been added officially to homebrew, however the version
-required for cppTango lib is 4.2.5. This requires omniorb to be "pinned" to
-avoid that brew overwrites it with "official" package on update.
-This formula contains fix [6639](https://sourceforge.net/p/omniorb/svn/6639/)
+required for cpptango@9.4.2 is 4.2.5.
+Omniorb@4.2.5 formula contains fix [6639](https://sourceforge.net/p/omniorb/svn/6639/)
 which solves floating point values conversion on arm processors, which has not
 yet been included in release of 4.2 branch.
 ```bash
 brew install subversion
-brew install omniorb
-brew pin omniorb
+brew install omniorb@4.2.5
 ```
