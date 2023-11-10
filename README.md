@@ -3,7 +3,7 @@ This tap contains following packages:
  - gr [v0.72.10](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - python-gr [v1.23.2](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.2.16](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
- - musrfit [v1.9.1](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
+ - musrfit [v1.9.2](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
  - omniorb@4.2.5 [v4.2.5](https://sourceforge.net/p/omniorb/svn/HEAD/tree/branches/4_2/omniORB/) - [homepage](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
