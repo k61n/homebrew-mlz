@@ -4,8 +4,8 @@ class PythonGr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/python-gr.git",
-      tag: "v1.23.2"
-  version "1.23.2"
+      tag: "v1.23.3"
+  version "1.23.3"
 
   depends_on "mlz/packages/gr"
   depends_on "numpy"
