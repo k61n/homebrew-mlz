@@ -1,6 +1,6 @@
 # MLZ brew formulae collection
 This tap contains following packages:
- - gr [v0.72.10](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
+ - gr [v0.72.11](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - python-gr [v1.23.3](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.2.16](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.2](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
