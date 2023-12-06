@@ -14,7 +14,9 @@ class PythonGr < Formula
   def install
     python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
     gr_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix gr`.strip
-    system "GR_VERSION=0.72.10 " +
+    gr_version = `#{HOMEBREW_PREFIX}/bin/brew list gr --versions`.strip
+    gr_version = gr_version.sub(/^gr\s+/, '')
+    system "GR_VERSION=#{gr_version} " +
              "GRLIB=#{gr_root} " +
              "#{python_exe} setup.py build"
     system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
