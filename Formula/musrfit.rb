@@ -50,6 +50,8 @@ class Musrfit < Formula
              "-Dqt_version=5 -Dqt_based_tools=0 " +
              "-DCMAKE_PREFIX_PATH=#{qt5_path} " +
              "-DROOT_ROOT=#{root_path} " +
+             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib " +
+             "-DVDT_INCLUDE_DIR=#{root_path}/include/root " +
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
@@ -72,6 +74,8 @@ class Musrfit < Formula
              "-Dqt_version=5 -Dqt_based_tools=1 " +
              "-DCMAKE_PREFIX_PATH=#{qt5_path} " +
              "-DROOT_ROOT=#{root_path} " +
+             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib " +
+             "-DVDT_INCLUDE_DIR=#{root_path}/include/root " +
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       prefix.install "src/musredit_qt5/mupp/mupp.app"
