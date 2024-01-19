@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-class OmniorbAT425 < Formula
+class OmniorbAT426 < Formula
   desc "CORBA object request broker for C++."
   homepage "https://sourceforge.net/projects/omniorb/"
-  url "svn://svn.code.sf.net/p/omniorb/svn/branches/4_2/omniORB"
-  version "4.2.5"
+  url "svn://svn.code.sf.net/p/omniorb/svn/tags/4_2_6/omniORB"
+  version "4.2.6"
 
   depends_on "make" => :build
   depends_on "python" => [:build, :latest]

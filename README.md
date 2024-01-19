@@ -5,7 +5,7 @@ This tap contains following packages:
  - hdf4 [v4.2.16](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.2](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
- - omniorb@4.2.5 [v4.2.5](https://sourceforge.net/p/omniorb/svn/HEAD/tree/branches/4_2/omniORB/) - [homepage](https://sourceforge.net/projects/omniorb)
+ - omniorb@4.2.6 [v4.2.6](https://sourceforge.net/p/omniorb/svn/HEAD/tree/) - [homepage](https://sourceforge.net/projects/omniorb)
  - tangoidl [v5.1.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
  - cpptango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)

@@ -21,7 +21,7 @@ class PytangoAT942 < Formula
     boost_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     boost_python_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost-python3`.strip
     cppzmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
-    omni_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb@4.2.5`.strip
+    omni_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb@4.2.6`.strip
     tango_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cpptango@9.4.2`.strip
     zmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
     boost_python_deps = `#{HOMEBREW_PREFIX}/bin/brew deps boost-python3`.strip

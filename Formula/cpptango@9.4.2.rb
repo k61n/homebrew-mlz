@@ -11,7 +11,7 @@ class CpptangoAT942 < Formula
   depends_on "git" => :build
   depends_on "subversion" => :build
   depends_on "cppzmq"
-  depends_on "mlz/packages/omniorb@4.2.5"
+  depends_on "mlz/packages/omniorb@4.2.6"
   depends_on "mlz/packages/tangoidl"
   depends_on "zeromq"
 
@@ -19,7 +19,7 @@ class CpptangoAT942 < Formula
     cores = `sysctl -n hw.ncpu`.strip
     mkdir "build" do
       cppzmq_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
-      omniorb_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb@4.2.5`.strip
+      omniorb_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb@4.2.6`.strip
       tangoidl_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix tangoidl`.strip
       zeromq_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
