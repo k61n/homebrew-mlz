@@ -2,7 +2,7 @@
 This tap contains following packages:
  - gr [v0.72.11](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - python-gr [v1.23.3](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
- - hdf4 [v4.2.16](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
+ - hdf4 [v4.3.0](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.2](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
  - omniorb@4.2.6 [v4.2.6](https://sourceforge.net/p/omniorb/svn/HEAD/tree/) - [homepage](https://sourceforge.net/projects/omniorb)
