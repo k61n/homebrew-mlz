@@ -4,8 +4,8 @@ class Gr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/gr.git",
-      tag: "v0.72.11"
-  version "0.72.11"
+      tag: "v0.73.2"
+  version "0.73.2"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -53,7 +53,7 @@ class Gr < Formula
                "-DFontconfig_ROOT=#{fontconfig_root} " +
                "-DFreetype_ROOT=#{freetype_root} " +
                "-DGs_ROOT=#{ghostscript_root} " +
-               "-DGlfw_ROOT=#{glfw_root} " +
+               "-Dglfw3_ROOT=#{glfw_root} " +
                "-DJpeg_ROOT=#{jpeg_root} " +
                "-DLibpng_ROOT=#{libpng_root} " +
                "-DTiff_ROOT=#{libtiff_root} " +
@@ -61,7 +61,7 @@ class Gr < Formula
                "-DPixman_ROOT=#{pixman_root} " +
                "-DQhull_ROOT=#{qhull_root} " +
                "-DVulkan_INCLUDE_DIR=#{vulkan_root} " +
-               "-DZeromq_ROOT=#{zeromq_root} " +
+               "-DZeroMQ_ROOT=#{zeromq_root} " +
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
