@@ -2,7 +2,7 @@
 This tap contains following packages:
  - gr [v0.73.2](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - python-vcversioner [v2.16.0.0](https://github.com/habnabit/vcversioner)
- - python-gr [v1.23.3](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
+ - python-gr [v1.24.0](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.3.0](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.2](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
