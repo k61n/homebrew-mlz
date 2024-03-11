@@ -1,6 +1,6 @@
 # MLZ brew formulae collection
 This tap contains following packages:
- - gr [v0.73.2](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
+ - gr [v0.73.3](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - python-vcversioner [v2.16.0.0](https://github.com/habnabit/vcversioner)
  - python-gr [v1.24.0](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.3.0](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
