@@ -9,17 +9,14 @@ class NexusFormat < Formula
 
   depends_on "cmake" => :build
   depends_on "git" => :build
-  depends_on "mlz/packages/hdf4"
   depends_on "hdf5"
 
   def install
     cores = `sysctl -n hw.ncpu`.strip
     mkdir "build" do
-      hdf4_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf4`.strip
       hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
                "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
-               "-DENABLE_HDF4=1 -DHDF4_ROOT=#{hdf4_path} " +
                "-DENABLE_HDF5=1 -DHDF5_ROOT=#{hdf5_path} " +
                "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
