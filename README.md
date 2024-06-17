@@ -36,16 +36,8 @@ brew install gr python-gr
 omniORB
 -------
 Omniorb requires subversion, but due to brew bug one should install subversion
-beforehand. Omniorb has been added officially to homebrew, however the version
-required for cpptango@9.4.2 is 4.2.5.
-Omniorb@4.2.5 formula contains fix [6639](https://sourceforge.net/p/omniorb/svn/6639/)
-which solves floating point values conversion on arm processors, which has not
-yet been included in release of 4.2 branch.
+beforehand.
 ```bash
 brew install subversion
-brew install omniorb@4.2.5
+brew install omniorb@4.2.6
 ```
-
-Tango
------
-Consider `cpptango@9.4.2` and `pytango@9.4.2` for now.
