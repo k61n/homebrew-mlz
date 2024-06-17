@@ -9,7 +9,7 @@ class CpptangoAT942 < Formula
 
   depends_on "cmake" => :build
   depends_on "git" => :build
-  depends_on "subversion" => :build
+  depends_on "pkg-config" => :build
   depends_on "cppzmq"
   depends_on "mlz/packages/omniorb@4.2.6"
   depends_on "mlz/packages/tangoidl"
@@ -30,7 +30,7 @@ class CpptangoAT942 < Formula
              "-DTANGO_OMNI_BASE=#{omniorb_path} " +
              "-DTANGO_IDL_BASE=#{tangoidl_path} " +
              "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
-      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
     prefix.install Dir["install/*"]
