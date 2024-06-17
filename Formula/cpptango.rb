@@ -9,7 +9,6 @@ class Cpptango < Formula
 
   depends_on "cmake" => :build
   depends_on "git" => :build
-  depends_on "subversion" => :build
   depends_on "cppzmq"
   depends_on "jpeg-turbo"
   depends_on "omniorb"
@@ -19,20 +18,21 @@ class Cpptango < Formula
   def install
     cores = `sysctl -n hw.ncpu`.strip
     mkdir "build" do
-      cppzmq_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
-      jpeg_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix jpeg-turbo`.strip
-      omniorb_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb`.strip
-      tangoidl_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix tangoidl`.strip
-      zeromq_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-             "#{HOMEBREW_PREFIX}/bin/cmake .. " +
-             "-DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF " +
-             "-DTANGO_USE_LIBCPP=ON -DTANGO_USE_JPEG=ON " +
-             "-Dcppzmq_ROOT=#{cppzmq_path} " +
-             "-DJPEG_ROOT=#{jpeg_path} " +
-             "-DomniORB4_ROOT=#{omniorb_path} " +
-             "-Dtangoidl_ROOT=#{tangoidl_path} " +
-             "-DZeroMQ_ROOT=#{zeromq_path} " +
+      cppzmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
+      jpeg_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix jpeg-turbo`.strip
+      omniorb_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb`.strip
+      tangoidl_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix tangoidl`.strip
+      zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
+      ENV["CC"] = "/usr/bin/clang"
+      ENV["CXX"] = "/usr/bin/clang++"
+      ENV['cppzmq_ROOT'] = cppzmq_root
+      ENV["JPEG_ROOT"] = jpeg_root
+      ENV["omniORB4_ROOT"] = omniorb_root
+      ENV["tangoidl_ROOT"] = tangoidl_root
+      ENV["ZeroMQ_ROOT"] = zeromq_root
+      system "#{HOMEBREW_PREFIX}/bin/cmake", "..",
+             "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_TESTING=OFF",
+             "-DTANGO_USE_LIBCPP=ON", "-DTANGO_USE_JPEG=ON",
              "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
