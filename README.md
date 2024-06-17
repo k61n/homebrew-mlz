@@ -7,7 +7,7 @@ This tap contains following packages:
  - musrfit [v1.9.4](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
  - omniorb@4.2.6 [v4.2.6](https://sourceforge.net/p/omniorb/svn/HEAD/tree/) - [homepage](https://sourceforge.net/projects/omniorb)
- - tangoidl [v5.1.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
+ - tangoidl [v6.0.1](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
  - cpptango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - pytango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
  - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
