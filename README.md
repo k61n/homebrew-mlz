@@ -11,6 +11,7 @@ This tap contains following packages:
  - cpptango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - pytango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
+ - nicos-pyctl [v1.3.0](https://github.com/mlz-ictrl/nicos-pyctl) - [homepage](https://github.com/mlz-ictrl/nicos-pyctl)
 
 # Installation
 ```bash
