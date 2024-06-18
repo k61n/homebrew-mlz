@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "Software tool for analyzing time-differential μSR data."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.9.4"
-  version "1.9.4"
+      tag: "v1.9.5"
+  version "1.9.5"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
