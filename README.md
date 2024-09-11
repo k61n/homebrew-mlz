@@ -7,6 +7,7 @@ This tap contains following packages:
  - musrfit [v1.9.5](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
  - nicos-pyctl [v1.3.0](https://github.com/mlz-ictrl/nicos-pyctl) - [homepage](https://github.com/mlz-ictrl/nicos-pyctl)
+ - numpy [v1.26.4](https://github.com/numpy/numpy) - [homepage](https://numpy.org/)
  - omniorb@4.2.6 [v4.2.6](https://sourceforge.net/p/omniorb/svn/HEAD/tree/) - [homepage](https://sourceforge.net/projects/omniorb)
  - pytango@9.4.2 [v9.4.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
  - pytango [v9.5.1](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
