@@ -10,9 +10,9 @@ class PytangoAT942 < Formula
   depends_on "git" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "mlz/packages/cpptango@9.4.2"
-  depends_on "numpy"
   depends_on "python"
+  depends_on "mlz/packages/cpptango@9.4.2"
+  depends_on "mlz/packages/numpy@1.26"
 
   def install
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip

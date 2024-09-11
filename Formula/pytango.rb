@@ -11,10 +11,10 @@ class Pytango < Formula
   depends_on "git" => :build
   depends_on "boost"
   depends_on "boost-python3"
-  depends_on "numpy"
   depends_on "python"
   depends_on "python-packaging"
   depends_on "mlz/packages/cpptango"
+  depends_on "mlz/packages/numpy@1.26"
 
   def install
     python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
