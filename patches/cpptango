@@ -1,0 +1,13 @@
+diff --git a/configure/CMakeLists.txt b/configure/CMakeLists.txt
+index 72622319..21a759c3 100644
+--- a/configure/CMakeLists.txt
++++ b/configure/CMakeLists.txt
+@@ -286,7 +286,7 @@ if(NOT WIN32)
+         if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+             add_compile_options(-stdlib=libc++)
+             add_link_options(-stdlib=libc++)
+-            add_link_options(-fuse-ld=lld)
++#            add_link_options(-fuse-ld=lld)
+             if(NOT (CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang"))
+                 # This is unsupported by Apple's clang linker.
+                 add_link_options(LINKER:--allow-shlib-undefined)
