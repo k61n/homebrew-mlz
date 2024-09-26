@@ -4,8 +4,8 @@ class Tangoidl < Formula
   desc "Tango CORBA IDL file."
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/tango-idl.git",
-      tag: "6.0.1"
-  version "6.0.1"
+      tag: "6.0.2"
+  version "6.0.2"
 
   depends_on "cmake" => :build
   depends_on "git" => :build

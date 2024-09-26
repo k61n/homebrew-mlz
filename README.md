@@ -13,7 +13,7 @@ This tap contains following packages:
  - python-rsa [v4.9](https://github.com/sybrenstuvel/python-rsa) - [homepage](https://stuvel.eu/rsa)
  - python-toml [v0.10.2](https://github.com/uiri/toml) - [homepage](https://github.com/uiri/toml)
  - python-vcversioner [v2.16.0.0](https://github.com/habnabit/vcversioner)
- - tangoidl [v6.0.1](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
+ - tangoidl [v6.0.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
 
 # Installation
 ```bash
