@@ -2,7 +2,7 @@
 This tap contains following packages:
  - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - cpptango@10 [v10.0.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
- - gr [v0.73.5](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
+ - gr [v0.73.8](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.3.0](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
  - musrfit [v1.9.5](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
