@@ -7,7 +7,7 @@ class PythonVcversioner < Formula
       tag: "2.16.0.0"
   version "2.16.0.0"
 
-  depends_on "python"
+  depends_on "python@3.12"
 
   def install
     python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
