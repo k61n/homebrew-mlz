@@ -10,17 +10,13 @@ class PythonGr < Formula
   depends_on "mlz/packages/gr"
   depends_on "mlz/packages/python-vcversioner"
   depends_on "numpy"
-  depends_on "python"
+  depends_on "python@3.12"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
+    python_exe = "#{HOMEBREW_PREFIX}/bin/python3.12"
     gr_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix gr`.strip
-    gr_version = `#{HOMEBREW_PREFIX}/bin/brew list gr --versions`.strip
-    gr_version = gr_version.sub(/^gr\s+/, '')
-    system "GR_VERSION=#{gr_version} " +
-             "GRLIB=#{gr_root} " +
-             "#{python_exe} setup.py build"
-    system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
+    ENV['GRLIB'] = "#{gr_root}/lib"
+    system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
   end
 
   test do

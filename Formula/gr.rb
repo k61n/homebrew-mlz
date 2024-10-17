@@ -21,7 +21,6 @@ class Gr < Formula
   depends_on "libx11"
   depends_on "pixman"
   depends_on "qhull"
-  depends_on "qt@5"
   depends_on "qt@6"
   depends_on "vulkan-headers"
   depends_on "zeromq"
@@ -40,14 +39,13 @@ class Gr < Formula
     libx11_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix libx11`.strip
     pixman_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix pixman`.strip
     qhull_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix qhull`.strip
-    qt5_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
     qt6_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@6`.strip
     vulkan_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix vulkan-headers`.strip
     zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
     mkdir "build" do
       system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
                "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
-               "-DCMAKE_PREFIX_PATH='#{qt5_root};#{qt6_root}' " +
+               "-DCMAKE_PREFIX_PATH=#{qt6_root} " +
                "-DCairo_ROOT=#{cairo_root} " +
                "-DFfmpeg_ROOT=#{ffmpeg_root} " +
                "-DFontconfig_ROOT=#{fontconfig_root} " +

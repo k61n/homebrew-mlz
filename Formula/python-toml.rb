@@ -7,10 +7,10 @@ class PythonToml < Formula
       tag: "0.10.2"
   version "0.10.2"
 
-  depends_on "python"
+  depends_on "python@3.12"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
+    python_exe = "#{HOMEBREW_PREFIX}/bin/python3.12"
     system "#{python_exe} setup.py build"
     system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
   end
