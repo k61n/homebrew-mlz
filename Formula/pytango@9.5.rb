@@ -8,6 +8,7 @@ class PytangoAT95 < Formula
   version "9.5.1"
 
   depends_on "git" => :build
+  depends_on "python"
   depends_on "python-packaging"
   depends_on "mlz/packages/numpy@1.26"
   depends_on "mlz/packages/python-packaging-supplement"
@@ -27,11 +28,6 @@ class PytangoAT95 < Formula
     sha256 "c0a419546c18d454d9cd722893c54589370245a977e8fc7410fb7d9935ea5cd1"
   end
 
-  resource "cp312_arm64" do
-    url "https://files.pythonhosted.org/packages/62/f3/852559faf54820b0e827b362ec01c942faeb24d982cebd88f3a24008598c/pytango-9.5.1-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "b43e869a1979282e8a26e28462b7180c330f1d93b2a7d3190fed377a8f2bb1bb"
-  end
-
   resource "cp39_x86_64" do
     url "https://files.pythonhosted.org/packages/64/2a/7bd43e8f626edc0312c74a80a76fb2c45cd59e352e297c516b79c74dfd98/pytango-9.5.1-cp39-cp39-macosx_10_9_x86_64.whl"
     sha256 "c322fe04ab9b88cf26d77ba7b9eae342a16d9503c6aa4b66745d163ebcb0adc7"
@@ -47,17 +43,12 @@ class PytangoAT95 < Formula
     sha256 "0e284385cb44971c28e3316be57c0152ff3582da3a78570755c388e8b91f4562"
   end
 
-  resource "cp312_x86_64" do
-    url "https://files.pythonhosted.org/packages/2b/ce/1d4768aef625eef75138a8dccb737af5f94b27a0cf147957fcfdb4368de3/pytango-9.5.1-cp312-cp312-macosx_10_9_x86_64.whl"
-    sha256 "a8e9f44c12c606f9cfd2b74c4a7f4ba9b9cc0d44c68253a78b1775d69adcd1ba"
-  end
-
   def install
     arch = Hardware::CPU.arch.to_s
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      # since numpy 1.26.4 wheels are available for python >=3.9 <3.13
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 13
+      # since numpy 1.26.4 package is for python >=3.9 <3.12
+      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
         python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
         version = python.gsub("python@", "").gsub(".", "")
         resource("cp#{version}_#{arch}").stage do
@@ -71,7 +62,7 @@ class PytangoAT95 < Formula
   test do
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 13
+      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
         python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
         system python_exe, "-c", "from tango import DeviceProxy"
       end
