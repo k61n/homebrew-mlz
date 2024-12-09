@@ -27,18 +27,8 @@ brew install [package]
 
 Gr
 --
-Gr framework relies on both qt@5 and qt@6, in order for compilation to succeed
+Gr framework is built against qt@6, however if qt@5 is also installed in your
+brew, be sure it is not linked, otherwise compilation will fail.
 ```bash
-brew install qt@5 qt
-brew unlink qt@5 qt
-brew install gr python-gr
-```
-
-omniORB
--------
-Omniorb requires subversion, but due to brew bug one should install subversion
-beforehand.
-```bash
-brew install subversion
-brew install omniorb@4.2.6
+brew unlink qt@5
 ```
