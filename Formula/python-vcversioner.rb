@@ -7,13 +7,15 @@ class PythonVcversioner < Formula
       tag: "2.16.0.0"
   version "2.16.0.0"
 
-  depends_on "python@3.12"
+  depends_on "python"
   depends_on "python-setuptools"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3.12"
-    system "#{python_exe} setup.py build"
-    system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
+    pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
+    pythons.each do |python|
+      python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    end
   end
 
   test do
