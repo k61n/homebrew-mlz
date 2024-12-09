@@ -1,6 +1,6 @@
 # MLZ brew formulae collection
 This tap contains following packages:
- - cpptango [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
+ - cpptango@9.5 [v9.5.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - cpptango@10 [v10.0.0](https://gitlab.com/tango-controls/cppTango) - [homepage](https://www.tango-controls.org)
  - gr [v0.73.9](https://github.com/sciapp/gr) - [homepage](https://gr-framework.org)
  - hdf4 [v4.3.0](https://github.com/HDFGroup/hdf4) - [homepage](https://www.hdfgroup.org/solutions/hdf4)
