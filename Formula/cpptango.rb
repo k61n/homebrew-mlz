@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CpptangoAT10 < Formula
+class Cpptango < Formula
   desc "Distributed Control System - C++ library"
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/cppTango.git",
@@ -19,16 +19,10 @@ class CpptangoAT10 < Formula
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
     system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/cpptango"
     mkdir "build" do
-      cppzmq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
-      jpeg_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix jpeg-turbo`.strip
-      omniorb_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb`.strip
-      tangoidl_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix tangoidl`.strip
-      ENV["CC"] = "/usr/bin/clang"
-      ENV["CXX"] = "/usr/bin/clang++"
-      ENV['cppzmq_ROOT'] = cppzmq_root
-      ENV["JPEG_ROOT"] = jpeg_root
-      ENV["omniORB4_ROOT"] = omniorb_root
-      ENV["tangoidl_ROOT"] = tangoidl_root
+      ENV['cppzmq_ROOT'] = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
+      ENV["JPEG_ROOT"] = `#{HOMEBREW_PREFIX}/bin/brew --prefix jpeg-turbo`.strip
+      ENV["omniORB4_ROOT"] = `#{HOMEBREW_PREFIX}/bin/brew --prefix omniorb`.strip
+      ENV["tangoidl_ROOT"] = `#{HOMEBREW_PREFIX}/bin/brew --prefix tangoidl`.strip
       system "#{HOMEBREW_PREFIX}/bin/cmake", "..",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DBUILD_TESTING=OFF",
