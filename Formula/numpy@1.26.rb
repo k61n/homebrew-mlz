@@ -24,11 +24,6 @@ class NumpyAT126 < Formula
     sha256 "edd8b5fe47dab091176d21bb6de568acdd906d1887a4584a15a9a96a1dca06ef"
   end
 
-  resource "cp312_arm64" do
-    url "https://files.pythonhosted.org/packages/75/5b/ca6c8bd14007e5ca171c7c03102d17b4f4e0ceb53957e8c44343a9546dcc/numpy-1.26.4-cp312-cp312-macosx_11_0_arm64.whl"
-    sha256 "03a8c78d01d9781b28a6989f6fa1bb2c4f2d51201cf99d3dd875df6fbd96b23b"
-  end
-
   resource "cp39_x86_64" do
     url "https://files.pythonhosted.org/packages/7d/24/ce71dc08f06534269f66e73c04f5709ee024a1afe92a7b6e1d73f158e1f8/numpy-1.26.4-cp39-cp39-macosx_10_9_x86_64.whl"
     sha256 "7349ab0fa0c429c82442a27a9673fc802ffdb7c7775fad780226cb234965e53c"
@@ -44,17 +39,14 @@ class NumpyAT126 < Formula
     sha256 "4c66707fabe114439db9068ee468c26bbdf909cac0fb58686a42a24de1760c71"
   end
 
-  resource "cp312_x86_64" do
-    url "https://files.pythonhosted.org/packages/95/12/8f2020a8e8b8383ac0177dc9570aad031a3beb12e38847f7129bacd96228/numpy-1.26.4-cp312-cp312-macosx_10_9_x86_64.whl"
-    sha256 "b3ce300f3644fb06443ee2222c2201dd3a89ea6040541412b8fa189341847218"
-  end
 
   def install
     arch = Hardware::CPU.arch.to_s
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
       # numpy 1.26.4 wheels are available for python >=3.9 <3.13
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 13
+      # however we limit with <3.12, since numpy2+ is available for >=3.12
+      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
         python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
         version = python.gsub("python@", "").gsub(".", "")
         resource("cp#{version}_#{arch}").stage do
@@ -68,7 +60,7 @@ class NumpyAT126 < Formula
   test do
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 13
+      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
         python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
         system python_exe, "-c", <<~EOS
           import numpy as np
