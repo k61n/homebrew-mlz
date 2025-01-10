@@ -49,7 +49,7 @@ class PytangoAT95 < Formula
     pythons.each do |python|
       # since numpy 1.26.4 package is for python >=3.9 <3.12
       if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
-        python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
+        python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
         version = python.gsub("python@", "").gsub(".", "")
         resource("cp#{version}_#{arch}").stage do
           wheel_file = Dir[Pathname.pwd/"pytango*#{arch}.whl"].first
@@ -63,7 +63,7 @@ class PytangoAT95 < Formula
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
       if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 12
-        python_exe = "#{HOMEBREW_PREFIX}/bin/#{python.gsub("@", "")}"
+        python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
         system python_exe, "-c", "from tango import DeviceProxy"
       end
     end
