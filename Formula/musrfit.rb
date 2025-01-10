@@ -83,20 +83,24 @@ class Musrfit < Formula
       prefix.install "src/musredit_qt5/musredit/musredit.app"
       prefix.install "src/musredit_qt5/musrStep/musrStep.app"
       prefix.install "src/musredit_qt5/musrWiz/musrWiz.app"
+
+      musrfit_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix musrfit`.strip
+      exe = "musredit"
+      exe_content = <<~BASH
+        #!/bin/bash
+        MUSRFITPATH=#{musrfit_path}/bin ROOTSYS=#{musrfit_path} open #{musrfit_path}/musredit.app
+      BASH
+      File.open(exe, "w") do |file|
+        file.write(exe_content)
+        File.chmod(0755, exe)
+        bin.install exe
+      end
     end
   end
 
   def post_install
-    puts "############################################################"
-    puts "# Important post install actions ###########################"
-    puts "############################################################"
-    puts ""
-    musrfit_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix musrfit`.strip
-    puts "You can load museredit using following shell command:"
-    puts "MUSRFITPATH=#{musrfit_path}/bin ROOTSYS=#{musrfit_path} open #{musrfit_path}/musredit.app"
-    puts "It is recommended to create an Application with Automator using this shell command."
-    puts ""
-    puts "############################################################"
+    puts "To use MusrFit Editor, relaunch terminal and call"
+    puts "  musredit"
   end
 
   test do
