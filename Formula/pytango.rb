@@ -13,11 +13,11 @@ class Pytango < Formula
   depends_on "boost"
   depends_on "boost-python3"
   depends_on "numpy"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "mlz/packages/cpptango"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/opt/python@3.12/bin/python3.12"
+    python_exe = "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13"
     ENV['BOOST_ROOT'] = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     ENV['BOOST_PYTHON_SUFFIX'] = `#{HOMEBREW_PREFIX}/bin/brew deps boost-python3`.strip.match(/python@(\d+\.\d+)/)[1].gsub(".", "")
     ENV['CPPZMQ_ROOT'] = `#{HOMEBREW_PREFIX}/bin/brew --prefix cppzmq`.strip
@@ -27,7 +27,7 @@ class Pytango < Formula
   end
 
   test do
-    python_exe = "#{HOMEBREW_PREFIX}/opt/python@3.12/bin/python3.12"
+    python_exe = "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13"
     system python_exe, "-c", "from tango import DeviceProxy"
   end
 end
