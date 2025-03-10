@@ -4,8 +4,8 @@ class Pytango < Formula
   desc "Python module for cppTango C++ libraries"
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/pytango.git",
-      tag: "v10.0.0"
-  version "10.0.0"
+      tag: "v10.0.2"
+  version "10.0.2"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
