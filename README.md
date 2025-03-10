@@ -9,7 +9,7 @@ This tap contains following packages:
  - nicos-pyctl [v1.3.0](https://github.com/mlz-ictrl/nicos-pyctl) - [homepage](https://github.com/mlz-ictrl/nicos-pyctl)
  - numpy@1.26 [v1.26.4](https://github.com/numpy/numpy) - [homepage](https://numpy.org/)
  - pytango@9.5 [v9.5.1](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
- - pytango [v10.0.0](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
+ - pytango [v10.0.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
  - python-gr [v1.27.0](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - python-psutil [v5.9.8](https://github.com/giampaolo/psutil) - [homepage](https://github.com/giampaolo/psutil)
  - python-rsa [v4.9](https://github.com/sybrenstuvel/python-rsa) - [homepage](https://stuvel.eu/rsa)
