@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class Musrfit < Formula
-  desc "Software tool for analyzing time-differential ??SR data."
+  desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.9.7"
-  version "1.9.7"
+      tag: "v1.9.8"
+  version "1.9.8"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
