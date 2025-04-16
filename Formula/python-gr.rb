@@ -16,8 +16,8 @@ class PythonGr < Formula
     ENV['GRLIB'] = `#{HOMEBREW_PREFIX}/bin/brew --prefix gr`.strip
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      # can't install for python3.9
-      if python.gsub("python@3.", "").to_i > 9
+      # no numpy for python < 3.12
+      if python.gsub("python@3.", "").to_i > 11
         python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
         system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
       end
@@ -27,10 +27,9 @@ class PythonGr < Formula
   test do
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      # no numpy for pythons < 3.12
-      if python.gsub("python@3.", "").to_i > 11
-        python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
-        system python_exe, "-c", "from gr import pygr"
+      if python.gsub("python@3.", "").to_i > 1
+      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-c", "from gr import pygr"
       end
     end
   end
