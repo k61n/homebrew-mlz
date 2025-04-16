@@ -34,49 +34,55 @@ class Musrfit < Formula
     qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
     mkdir "build" do
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-             "#{HOMEBREW_PREFIX}/bin/cmake .. " +
-             "-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 " +
-             "-DPkgConfig=#{pkgconfig_path} " +
-             "-DGit_ROOT=#{git_path} " +
-             "-DBoost_ROOT=#{boost_path} " +
-             "-DGSL_ROOT=#{gsl_path} " +
-             "-DFFTW3_ROOT=#{fftw_path} " +
-             "-DHDF4_ROOT=#{hd4_path} " +
-             "-DHDF5_ROOT=#{hd5_path} " +
-             "-DLibXml2=#{libxml2_path} " +
-             "-Dnexus=1 -DNEXUS_ROOT=#{nexus_path} " +
-             "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus " +
-             "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json " +
-             "-Dqt_version=5 -Dqt_based_tools=0 " +
-             "-DCMAKE_PREFIX_PATH=#{qt5_path} " +
-             "-DROOT_ROOT=#{root_path} " +
-             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib " +
-             "-DVDT_INCLUDE_DIR=#{root_path}/include/root " +
+      system "#{HOMEBREW_PREFIX}/bin/cmake",
+             "..",
+             "-DCMAKE_BUILD_TYPE=Release",
+             "-DCMAKE_CXX_STANDARD=17",
+             "-DPkgConfig=#{pkgconfig_path}",
+             "-DGit_ROOT=#{git_path}",
+             "-DBoost_ROOT=#{boost_path}",
+             "-DGSL_ROOT=#{gsl_path}",
+             "-DFFTW3_ROOT=#{fftw_path}",
+             "-DHDF4_ROOT=#{hd4_path}",
+             "-DHDF5_ROOT=#{hd5_path}",
+             "-DLibXml2=#{libxml2_path}",
+             "-Dnexus=1",
+             "-DNEXUS_ROOT=#{nexus_path}",
+             "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus",
+             "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json",
+             "-Dqt_version=5",
+             "-Dqt_based_tools=0",
+             "-DCMAKE_PREFIX_PATH=#{qt5_path}",
+             "-DROOT_ROOT=#{root_path}",
+             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
+             "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
       prefix.install Dir["install/*"]
       system "rm", "-rf", "*"
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-             "#{HOMEBREW_PREFIX}/bin/cmake .. " +
-             "-DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 " +
-             "-DPkgConfig=#{pkgconfig_path} " +
-             "-DGit_ROOT=#{git_path} " +
-             "-DBoost_ROOT=#{boost_path} " +
-             "-DGSL_ROOT=#{gsl_path} " +
-             "-DFFTW3_ROOT=#{fftw_path} " +
-             "-DHDF4_ROOT=#{hd4_path} " +
-             "-DHDF5_ROOT=#{hd5_path} " +
-             "-DLibXml2=#{libxml2_path} " +
-             "-Dnexus=1 -DNEXUS_ROOT=#{nexus_path} " +
-             "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus " +
-             "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json " +
-             "-Dqt_version=5 -Dqt_based_tools=1 " +
-             "-DCMAKE_PREFIX_PATH=#{qt5_path} " +
-             "-DROOT_ROOT=#{root_path} " +
-             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib " +
-             "-DVDT_INCLUDE_DIR=#{root_path}/include/root " +
+      system "#{HOMEBREW_PREFIX}/bin/cmake",
+             "..",
+             "-DCMAKE_BUILD_TYPE=Release",
+             "-DCMAKE_CXX_STANDARD=17",
+             "-DPkgConfig=#{pkgconfig_path}",
+             "-DGit_ROOT=#{git_path}",
+             "-DBoost_ROOT=#{boost_path}",
+             "-DGSL_ROOT=#{gsl_path}",
+             "-DFFTW3_ROOT=#{fftw_path}",
+             "-DHDF4_ROOT=#{hd4_path}",
+             "-DHDF5_ROOT=#{hd5_path}",
+             "-DLibXml2=#{libxml2_path}",
+             "-Dnexus=1",
+             "-DNEXUS_ROOT=#{nexus_path}",
+             "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus",
+             "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json",
+             "-Dqt_version=5",
+             "-Dqt_based_tools=1",
+             "-DCMAKE_PREFIX_PATH=#{qt5_path}",
+             "-DROOT_ROOT=#{root_path}",
+             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
+             "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       prefix.install "src/musredit_qt5/mupp/mupp.app"
