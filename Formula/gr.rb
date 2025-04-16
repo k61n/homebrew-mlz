@@ -43,24 +43,26 @@ class Gr < Formula
     vulkan_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix vulkan-headers`.strip
     zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
     mkdir "build" do
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
-               "-DCMAKE_PREFIX_PATH=#{qt6_root} " +
-               "-DCairo_ROOT=#{cairo_root} " +
-               "-DFfmpeg_ROOT=#{ffmpeg_root} " +
-               "-DFontconfig_ROOT=#{fontconfig_root} " +
-               "-DFreetype_ROOT=#{freetype_root} " +
-               "-DGs_ROOT=#{ghostscript_root} " +
-               "-Dglfw3_ROOT=#{glfw_root} " +
-               "-DJpeg_ROOT=#{jpeg_root} " +
-               "-DLibpng_ROOT=#{libpng_root} " +
-               "-DTiff_ROOT=#{libtiff_root} " +
-               "-DX11_ROOT=#{libx11_root} " +
-               "-DPixman_ROOT=#{pixman_root} " +
-               "-DQhull_ROOT=#{qhull_root} " +
-               "-DVulkan_INCLUDE_DIR=#{vulkan_root} " +
-               "-DZeroMQ_ROOT=#{zeromq_root} " +
-               "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
+      system "#{HOMEBREW_PREFIX}/bin/cmake",
+             "..",
+             "-DCMAKE_BUILD_TYPE=Release",
+             "-DCMAKE_PREFIX_PATH=#{qt6_root}",
+             "-DCairo_ROOT=#{cairo_root}",
+             "-DFfmpeg_ROOT=#{ffmpeg_root}",
+             "-DFontconfig_ROOT=#{fontconfig_root}",
+             "-DFreetype_ROOT=#{freetype_root}",
+             "-DGs_ROOT=#{ghostscript_root}",
+             "-Dglfw3_ROOT=#{glfw_root}",
+             "-DJpeg_ROOT=#{jpeg_root}",
+             "-DLibpng_ROOT=#{libpng_root}",
+             "-DTiff_ROOT=#{libtiff_root}",
+             "-DX11_ROOT=#{libx11_root}",
+             "-DPixman_ROOT=#{pixman_root}",
+             "-DQhull_ROOT=#{qhull_root}",
+             "-DVulkan_INCLUDE_DIR=#{vulkan_root}",
+             "-DZeroMQ_ROOT=#{zeromq_root}",
+             "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+             "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
