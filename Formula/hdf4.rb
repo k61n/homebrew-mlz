@@ -15,9 +15,10 @@ class Hdf4 < Formula
   def install
     cores = `sysctl -n hw.ncpu`.strip
     mkdir "build" do
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "cmake .. -DCMAKE_BUILD_TYPE=Release " +
-               "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
+      system "#{HOMEBREW_PREFIX}/bin/cmake",
+             "..",
+             "-DCMAKE_BUILD_TYPE=Release",
+             "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "cmake", "--build", ".", "--parallel", cores.to_s
       system "cmake", "--install", "."
       system "find #{buildpath}/install -name '*.a' -delete"
