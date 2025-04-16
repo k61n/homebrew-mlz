@@ -13,12 +13,15 @@ class NexusFormat < Formula
 
   def install
     cores = `sysctl -n hw.ncpu`.strip
+    hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
     mkdir "build" do
-      hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
-      system "CC=/usr/bin/clang CXX=/usr/bin/clang++ " +
-               "#{HOMEBREW_PREFIX}/bin/cmake .. -DCMAKE_BUILD_TYPE=Release " +
-               "-DENABLE_HDF5=1 -DHDF5_ROOT=#{hdf5_path} " +
-               "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
+      system "#{HOMEBREW_PREFIX}/bin/cmake",
+             "..",
+             "-DCMAKE_BUILD_TYPE=Release",
+             "-DENABLE_HDF5=1",
+             "-DHDF5_ROOT=#{hdf5_path}",
+             "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+             "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
