@@ -10,12 +10,18 @@ class PythonNicosPyctl < Formula
   depends_on "python"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
-    system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
+    pythons.each do |python|
+      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    end
   end
 
   test do
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
-    system python_exe, "-c", "import nicospyctl"
+    pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
+    pythons.each do |python|
+      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-c", "import nicospyctl"
+    end
   end
 end
