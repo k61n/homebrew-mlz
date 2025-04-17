@@ -8,7 +8,7 @@ This tap contains following packages:
  - nicos-pyctl [v1.3.0](https://github.com/mlz-ictrl/nicos-pyctl) - [homepage](https://github.com/mlz-ictrl/nicos-pyctl)
  - pytango [v10.0.2](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
  - python-gr [v1.27.0](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
- - python-psutil [v5.9.8](https://github.com/giampaolo/psutil) - [homepage](https://github.com/giampaolo/psutil)
+ - python-psutil [v7.0.0](https://github.com/giampaolo/psutil) - [homepage](https://github.com/giampaolo/psutil)
  - python-rsa [v4.9](https://github.com/sybrenstuvel/python-rsa) - [homepage](https://stuvel.eu/rsa)
  - python-toml [v0.10.2](https://github.com/uiri/toml) - [homepage](https://github.com/uiri/toml)
  - python-typing-extensions [v4.13.2](https://github.com/python/typing_extensions) - [homepage](https://github.com/python/typing_extensions)
