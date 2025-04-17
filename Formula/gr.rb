@@ -42,6 +42,8 @@ class Gr < Formula
     qt6_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@6`.strip
     vulkan_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix vulkan-headers`.strip
     zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
+    repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
+    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
