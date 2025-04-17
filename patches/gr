@@ -1,0 +1,22 @@
+diff --git a/cmake/FindJpeg.cmake b/cmake/FindJpeg.cmake
+index ea8f9ff2..afa6abd7 100644
+--- a/cmake/FindJpeg.cmake
++++ b/cmake/FindJpeg.cmake
+@@ -25,7 +25,7 @@
+ #   If false, do not try to use Jpeg.
+
+ if(NOT JPEG_INCLUDE_DIR)
+-  find_path(JPEG_INCLUDE_DIR jpeglib.h)
++  find_path(JPEG_INCLUDE_DIR NAMES jpeglib.h HINTS ${Jpeg_ROOT}/include NO_DEFAULT_PATH)
+ endif()
+
+ if(NOT JPEG_LIBRARY)
+@@ -33,7 +33,7 @@ if(NOT JPEG_LIBRARY)
+ endif()
+
+ if(NOT JCONFIG_INCLUDE_DIR)
+-  find_path(JCONFIG_INCLUDE_DIR jconfig.h)
++  find_path(JCONFIG_INCLUDE_DIR NAMES jconfig.h HINTS ${Jpeg_ROOT}/include NO_DEFAULT_PATH)
+ endif()
+
+ if(JPEG_INCLUDE_DIR AND JCONFIG_INCLUDE_DIR)
