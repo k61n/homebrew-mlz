@@ -8,6 +8,8 @@ class Pytango < Formula
   version "10.0.2"
 
   depends_on "git" => :build
+  depends_on "numpy"
+  depends_on "python-packaging"
   depends_on "mlz/packages/python-typing-extensions"
 
 
