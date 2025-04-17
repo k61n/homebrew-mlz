@@ -7,16 +7,21 @@ class PythonToml < Formula
       tag: "0.10.2"
   version "0.10.2"
 
-  depends_on "python@3.12"
+  depends_on "python"
 
   def install
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3.12"
-    system "#{python_exe} setup.py build"
-    system python_exe, *Language::Python.setup_install_args(prefix, python_exe)
+    pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
+    pythons.each do |python|
+      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    end
   end
 
   test do
-    python_exe = "#{HOMEBREW_PREFIX}/bin/python3"
-    system python_exe, "-c", "import toml"
+    pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
+    pythons.each do |python|
+      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+      system python_exe, "-c", "import toml"
+    end
   end
 end
