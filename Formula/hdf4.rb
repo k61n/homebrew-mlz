@@ -12,6 +12,8 @@ class Hdf4 < Formula
   depends_on "jpeg-turbo"
   depends_on "zlib"
 
+  keg_only "to not conflict with `hdf5`"
+
   def install
     cores = `sysctl -n hw.ncpu`.strip
     mkdir "build" do
