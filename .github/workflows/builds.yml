@@ -34,9 +34,11 @@ jobs:
       - uses: actions/checkout@v4
       - shell: bash
         run: |
-          brew uninstall $(brew list)
-          brew update
-          brew upgrade
+          brew uninstall -q $(brew list)
+          brew update -q
+          brew upgrade -q
+          brew cleanup -q --prune=all
           brew tap mlz/packages https://forge.frm2.tum.de/review/mlz/packages/homebrew
+          brew install --only-dependencies -q mlz/packages/${{matrix.formulae}}
           brew install mlz/packages/${{matrix.formulae}} -v
           brew test mlz/packages/${{matrix.formulae}} -v
