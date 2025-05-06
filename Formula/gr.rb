@@ -23,6 +23,7 @@ class Gr < Formula
   depends_on "qhull"
   depends_on "qt@6"
   depends_on "vulkan-headers"
+  depends_on "xerces-c"
   depends_on "zeromq"
 
   def install
@@ -44,6 +45,7 @@ class Gr < Formula
     zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
     system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr"
+    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr1"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",

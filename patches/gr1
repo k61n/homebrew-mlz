@@ -1,0 +1,21 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1164,7 +1164,7 @@ if(APPLE)
+                    MACOSX_BUNDLE_BUNDLE_VERSION "${GR_VERSION}"
+                    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/lib/gks/quartz/MacOSXBundleInfo.plist.in"
+       )
+-      set(GKSTerm_MACOSX_BUNDLE_SIGNATURE "GKST")
++#      set(GKSTerm_MACOSX_BUNDLE_SIGNATURE "GKST")
+       set(GKSTerm_MACOSX_MAIN_NIB_FILE "MainMenu")
+       string(APPEND GR_REPORT "- GKSTerm: Yes (Build without Xcode)\n")
+     endif()
+@@ -1264,7 +1264,7 @@ if(Qt4_FOUND
+                  MACOSX_BUNDLE_ICON_FILE "gksqt"
+                  MACOSX_BUNDLE_BUNDLE_VERSION "${GR_VERSION}"
+     )
+-    set(gksqt_MACOSX_BUNDLE_SIGNATURE "gksqt")
++#    set(gksqt_MACOSX_BUNDLE_SIGNATURE "gksqt")
+     set(gksqt_MACOSX_MAIN_NIB_FILE "")
+   endif()
+   string(APPEND GR_REPORT "- gksqt: Yes\n")
