@@ -1,5 +1,4 @@
 diff --git a/cmake/FindJpeg.cmake b/cmake/FindJpeg.cmake
-index ea8f9ff2..afa6abd7 100644
 --- a/cmake/FindJpeg.cmake
 +++ b/cmake/FindJpeg.cmake
 @@ -25,7 +25,7 @@
