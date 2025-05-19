@@ -13,7 +13,7 @@ This tap contains following packages:
  - python-toml [v0.10.2](https://github.com/uiri/toml) - [homepage](https://github.com/uiri/toml)
  - python-typing-extensions [v4.13.2](https://github.com/python/typing_extensions) - [homepage](https://github.com/python/typing_extensions)
  - python-vcversioner [v2.16.0.0](https://github.com/habnabit/vcversioner)
- - tangoidl [v6.0.2](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
+ - tangoidl [v6.0.3](https://gitlab.com/tango-controls/tango-idl) - [homepage](https://www.tango-controls.org)
 
 # Installation
 ```bash
