@@ -16,6 +16,7 @@ jobs:
         os: [macos-14]
         formulae: [
           "cpptango",
+          "drspine",
           "gr",
           "hdf4",
           "musrfit",
