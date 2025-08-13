@@ -4,8 +4,8 @@ class PythonGr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/python-gr.git",
-      tag: "v1.29.0"
-  version "1.29.0"
+      tag: "v1.30.0"
+  version "1.30.0"
 
   depends_on "mlz/packages/gr"
   depends_on "mlz/packages/python-vcversioner"
