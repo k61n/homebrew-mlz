@@ -33,6 +33,8 @@ class Musrfit < Formula
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
+    repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
+    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/musrfit"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",

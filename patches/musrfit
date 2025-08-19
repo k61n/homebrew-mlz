@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3947ca9f..f4bc1821 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -94,7 +94,6 @@ set(ROOT_GRTEQ_24 ${ROOT_GRTEQ_24} CACHE INTERNAL "ROOT Version check")
+ #--- check for boost ----------------------------------------------------------
+ find_package(Boost REQUIRED
+   COMPONENTS
+-    system
+     filesystem
+ )
+ message(STATUS "Boost libs: ${Boost_LIBRARIES}")
