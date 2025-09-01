@@ -1,0 +1,44 @@
+name: build formulae
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  macos:
+    runs-on: macos-14
+    strategy:
+      matrix:
+        formula: [
+          "cpptango",
+          "drspine",
+          "gr",
+          "hdf4",
+          "musrfit",
+          "nexus-format",
+          "pytango",
+          "python-gr",
+          "python-nicos-pyctl",
+          "python-psutil",
+          "python-rsa",
+          "python-toml",
+          "python-typing-extensions",
+          "python-vcversioner",
+          "tangoidl",
+        ]
+    steps:
+      - uses: actions/checkout@v4
+      - shell: bash
+        run: |
+          brew uninstall -q $(brew list)
+          brew update -q
+          brew upgrade -q
+          brew cleanup -q --prune=all
+          brew tap mlz/packages https://forge.frm2.tum.de/review/mlz/packages/homebrew
+          brew install --only-dependencies -q mlz/packages/${{matrix.formula}}
+          brew install mlz/packages/${{matrix.formula}} -v
+          brew test mlz/packages/${{matrix.formula}} -v
