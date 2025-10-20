@@ -9,6 +9,7 @@ class Pytango < Formula
 
   depends_on "git" => :build
   depends_on "numpy"
+  depends_on "python@3.13"
   depends_on "python-packaging"
   depends_on "mlz/packages/python-typing-extensions"
 
@@ -83,8 +84,10 @@ class Pytango < Formula
   test do
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
-      system python_exe, "-c", "from tango import DeviceProxy"
+      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 14
+        python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
+        system python_exe, "-c", "from tango import DeviceProxy"
+      end
     end
   end
 end
