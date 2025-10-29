@@ -4,8 +4,8 @@ class Pytango < Formula
   desc "Python module for cppTango C++ libraries"
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/pytango.git",
-      tag: "v10.0.3"
-  version "10.0.3"
+      tag: "v10.1.0"
+  version "10.1.0"
 
   depends_on "git" => :build
   depends_on "numpy"
@@ -14,54 +14,54 @@ class Pytango < Formula
   depends_on "mlz/packages/python-typing-extensions"
 
 
-  resource "cp39_arm64" do
-    url "https://files.pythonhosted.org/packages/81/35/21e88c717fe730ccf6c7f910b27c6fc817d3ce3eacf70d18b6dc0619dfaf/pytango-10.0.3-cp39-cp39-macosx_12_0_arm64.whl"
-    sha256 "777967d6d4f10f662941a1dcde984f89066b1d43d263192decbcd3ea7987d312"
-  end
-
   resource "cp310_arm64" do
-    url "https://files.pythonhosted.org/packages/39/74/e0592346d74429f9aa5c759a94b343c204d08ec8184e9c61f93bb3f36431/pytango-10.0.3-cp310-cp310-macosx_12_0_arm64.whl"
-    sha256 "14a091601cab6af84f5ee255dd7f114ad67e9bc724b367099d13d994c8036ae6"
+    url "https://files.pythonhosted.org/packages/c5/81/f6215277ba33ab1ca5dbd7c2e8cbaaa2b72bdc97731f9e6e31df6f5d5fdf/pytango-10.1.0-cp310-cp310-macosx_12_0_arm64.whl"
+    sha256 "753de16dc1e1252e6c9950038e7ed84f34a52152de0f284219cd076014673fec"
   end
 
   resource "cp311_arm64" do
-    url "https://files.pythonhosted.org/packages/11/a2/cfc28130704b44bae89d0cdec0e5f20878b5ef8a8bd7a822256fd5be335f/pytango-10.0.3-cp311-cp311-macosx_12_0_arm64.whl"
-    sha256 "51464e31b63b9f80687f84d9ece6d79ca82e8f5c483ccabf07c973cba15fd9d5"
+    url "https://files.pythonhosted.org/packages/e9/c7/0fe8da89ef1600db6ac1d142f872d6c07c2ef21b7253299aa59f721ea08e/pytango-10.1.0-cp311-cp311-macosx_12_0_arm64.whl"
+    sha256 "fff590b5d088e991ac4b86b02644310515fbd56f92107105a225706dab4c7147"
   end
 
   resource "cp312_arm64" do
-    url "https://files.pythonhosted.org/packages/ed/fc/fdae94bcea73fc3e2952b89bf56f66512dff99bf3b9700fc0f585b2c8f98/pytango-10.0.3-cp312-cp312-macosx_12_0_arm64.whl"
-    sha256 "b90db10d2fe44c81260f91bf7e61949e5a913ff9f5909017d27a90a2a595e181"
+    url "https://files.pythonhosted.org/packages/ac/0b/f756ccbf8e731653d9c2262100a9e5302de7c166f2f913f93053e606615c/pytango-10.1.0-cp312-cp312-macosx_12_0_arm64.whl"
+    sha256 "70562ca8cf112c4919c51f02b2ff5181d5637f83e354b673e805688dd39c23ee"
   end
 
   resource "cp313_arm64" do
-    url "https://files.pythonhosted.org/packages/a4/a0/290468cd6d4038745d1de2cc58911c2e8596a9aa8d66b352802f96925292/pytango-10.0.3-cp313-cp313-macosx_12_0_arm64.whl"
-    sha256 "9a3f648f7dd66eeac5786ff9e315afa100064ff5873145d5c79a41321b56a57a"
+    url "https://files.pythonhosted.org/packages/7a/ce/e678fc4ba651dc26353ef26501b6936ffe0f6d963ab8e23606af9c3e34cc/pytango-10.1.0-cp313-cp313-macosx_12_0_arm64.whl"
+    sha256 "156aff8c15ee980f80d0c1b465471b4fafefce157af52accf0e67b4300d0ab32"
   end
 
-  resource "cp39_x86_64" do
-    url "https://files.pythonhosted.org/packages/5c/3c/ac23dbd3049434f2a4dd92dc2f7c83a7bef2dd0acc8f758ac26c1d6776bc/pytango-10.0.3-cp39-cp39-macosx_12_0_x86_64.whl"
-    sha256 "515b6a59bdada204e020e8f91c682392e015a428fdfb2a32041c10300fbffc58"
+  resource "cp314_arm64" do
+    url "https://files.pythonhosted.org/packages/96/9f/e9beea1326ff69056ad5daf0f87ed8be187ed6f9b1ad96065dd831151404/pytango-10.1.0-cp314-cp314-macosx_12_0_arm64.whl"
+    sha256 "3b61e2eb91558919b9ecd94f13d544f3e0c8e9957108c3b06c0b7a7084d0603e"
   end
 
   resource "cp310_x86_64" do
-    url "https://files.pythonhosted.org/packages/a7/f6/b639cf469a64089b62d40b4c41c117b608e968a644d50952783cd53a0288/pytango-10.0.3-cp310-cp310-macosx_12_0_x86_64.whl"
-    sha256 "82608e6d90666a248b6913c9b03f5a8b3d65a5a1c87acb004e22ec2326ef5a28"
+    url "https://files.pythonhosted.org/packages/9b/85/f2ff9535ce033b8bf692bc1057140ddd646baaab1bc45de50a537e15d70c/pytango-10.1.0-cp310-cp310-macosx_12_0_x86_64.whl"
+    sha256 "b0e62be26142f723a6fd2a77461cfcaabc07edd2b5e03251bea5223f4bcfa679"
   end
 
   resource "cp311_x86_64" do
-    url "https://files.pythonhosted.org/packages/b8/de/6774df781401aab59602c4dfbdc8fd17ceabdc546f5ed2248e0156b739d9/pytango-10.0.3-cp311-cp311-macosx_12_0_x86_64.whl"
-    sha256 "44ca2954feed026d55808b763b6666c58763cda60c6d5ab84867f2381b6ce705"
+    url "https://files.pythonhosted.org/packages/03/08/25fa0a5cbf25c5c8ce85e7963f228d65dc5b874daac61ebcca4cd85f7b3b/pytango-10.1.0-cp311-cp311-macosx_12_0_x86_64.whl"
+    sha256 "696818b8a69fc015cecafccd3bdd5ddb755fcaa2683851f7079d5216947ca336"
   end
 
   resource "cp312_x86_64" do
-    url "https://files.pythonhosted.org/packages/cf/16/1e0e4d77c58e2eb3ead15aacbb852fed2343cb9a4c92022ea6b8c0297acf/pytango-10.0.3-cp312-cp312-macosx_12_0_x86_64.whl"
-    sha256 "ff313775ea4eb07224926026d48caa5fb41e143a61c17da626513834876b1b95"
+    url "https://files.pythonhosted.org/packages/2e/1e/1657c03929407be4613410349f0f7405d6fe77be9c2a6ba93e5adc07f0a9/pytango-10.1.0-cp312-cp312-macosx_12_0_x86_64.whl"
+    sha256 "e960bc041603e4039deedca0181bdfb0f75ce75438c8915963475e7e35a6def6"
   end
 
   resource "cp313_x86_64" do
-    url "https://files.pythonhosted.org/packages/2c/54/e3cf1229f8f24b9f5323a09968828a3919742dc3931769a1f0892fa20f2b/pytango-10.0.3-cp313-cp313-macosx_12_0_x86_64.whl"
-    sha256 "07be8db2b72fe339ab525cabb3f0c5c833bbe47f685ab440ec99c4116b9d19de"
+    url "https://files.pythonhosted.org/packages/68/9b/50d4b2ef75a3ffa0b53b6c3c8bc08c6a3ed14a29cd1b8a9712de6a4d338e/pytango-10.1.0-cp313-cp313-macosx_12_0_x86_64.whl"
+    sha256 "ed5977d4e64063a8ff61c2058149f96f947338305b05f2b989f91e033499e336"
+  end
+
+  resource "cp314_x86_64" do
+    url "https://files.pythonhosted.org/packages/4f/a7/1fbbd14470868d4945ff3b02cbdc5d9dc0c0caa3a9037e934383d1cd49d4/pytango-10.1.0-cp314-cp314-macosx_12_0_x86_64.whl"
+    sha256 "39bc00e4b2dd3ec30304ee64830ea4e4ec7aedd79276e2a467e78eea2e9f2394"
   end
 
 
@@ -70,7 +70,7 @@ class Pytango < Formula
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
       # available for >=3.9 <3.14
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 14
+      if python.gsub("python@3.", "").to_i >= 10 && python.gsub("python@3.", "").to_i < 15
         python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
         version = python.gsub("python@", "").gsub(".", "")
         resource("cp#{version}_#{arch}").stage do
@@ -84,7 +84,7 @@ class Pytango < Formula
   test do
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
-      if python.gsub("python@3.", "").to_i >= 9 && python.gsub("python@3.", "").to_i < 14
+      if python.gsub("python@3.", "").to_i >= 10 && python.gsub("python@3.", "").to_i < 15
         python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
         system python_exe, "-c", "from tango import DeviceProxy"
       end

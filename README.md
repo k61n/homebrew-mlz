@@ -7,7 +7,7 @@ This tap contains following packages:
  - musrfit [v1.9.9](https://bitbucket.org/muonspin/musrfit/src/root6/) - [homepage](http://lmu.web.psi.ch/musrfit/user/html/index.html)
  - nexus-format [v4.4.3](https://github.com/nexusformat/code) - [homepage](https://www.nexusformat.org)
  - nicos-pyctl [v1.3.0](https://github.com/mlz-ictrl/nicos-pyctl) - [homepage](https://github.com/mlz-ictrl/nicos-pyctl)
- - pytango [v10.0.3](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
+ - pytango [v10.1.0](https://gitlab.com/tango-controls/pytango) - [homepage](https://www.tango-controls.org)
  - python-gr [v1.30.0](https://github.com/sciapp/python-gr) - [homepage](https://gr-framework.org)
  - python-psutil [v7.0.0](https://github.com/giampaolo/psutil) - [homepage](https://github.com/giampaolo/psutil)
  - python-rsa [v4.9](https://github.com/sybrenstuvel/python-rsa) - [homepage](https://stuvel.eu/rsa)
