@@ -46,7 +46,6 @@ class Gr < Formula
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
     system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr"
     system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr1"
-    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr2"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
