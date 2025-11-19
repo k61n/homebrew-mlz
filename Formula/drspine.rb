@@ -4,8 +4,8 @@ class Drspine < Formula
   desc "Data reduction software for the Neutron Spin Echo method."
   homepage "https://jugit.fz-juelich.de/nse/drspine"
   url "https://jugit.fz-juelich.de/nse/drspine.git",
-      tag: "v1.4.4"
-  version "1.4.4"
+      tag: "v1.4.9"
+  version "1.4.9"
 
   depends_on "git" => :build
   depends_on "make" => :build
