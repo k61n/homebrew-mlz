@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.9.9"
-  version "1.9.9"
+      tag: "v1.9.10"
+  version "1.9.10"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -33,8 +33,6 @@ class Musrfit < Formula
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
-    repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
-    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/musrfit"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
