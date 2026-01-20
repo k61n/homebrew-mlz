@@ -4,8 +4,8 @@ class Gr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/gr.git",
-      tag: "v0.73.19"
-  version "0.73.19"
+      tag: "v0.73.20"
+  version "0.73.20"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
