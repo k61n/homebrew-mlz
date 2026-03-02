@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.9.10"
-  version "1.9.10"
+      tag: "v1.10.0"
+  version "1.10.0"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
