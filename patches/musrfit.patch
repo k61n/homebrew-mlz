@@ -1,0 +1,160 @@
+From 2c2aaea9e26d4ba49a686e1a640ce11338862702 Mon Sep 17 00:00:00 2001
+From: Andreas Suter <andreas.suter@psi.ch>
+Date: Sat, 21 Feb 2026 17:38:11 +0100
+Subject: [PATCH] fix Boost_INCLUDE_DIR -> Boost_INCLUDE_DIRS
+
+---
+ src/CMakeLists.txt                        | 12 ++++++------
+ src/classes/CMakeLists.txt                | 10 +++++-----
+ src/external/Nonlocal/prog/CMakeLists.txt |  2 +-
+ src/musredit_qt5/mupp/CMakeLists.txt      |  2 +-
+ src/musredit_qt6/mupp/CMakeLists.txt      |  2 +-
+ 6 files changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 3486ac8d..d7cd7ea9 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -27,7 +27,7 @@ add_executable(addRun addRun.cpp)
+ target_compile_options(addRun BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(addRun 
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
+@@ -38,7 +38,7 @@ add_executable(any2many any2many.cpp)
+ target_compile_options(any2many BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(any2many 
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
+@@ -81,7 +81,7 @@ add_executable(musrfit musrfit.cpp)
+ target_compile_options(musrfit BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(musrfit 
+   BEFORE PRIVATE 
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
+@@ -92,7 +92,7 @@ add_executable(musrFT musrFT.cpp)
+ target_compile_options(musrFT BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(musrFT 
+   BEFORE PRIVATE 
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${FFTW3_INCLUDE}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+@@ -115,7 +115,7 @@ add_executable(musrt0 musrt0.cpp)
+ target_compile_options(musrt0 BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(musrt0 
+   BEFORE PRIVATE 
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/include>
+@@ -126,7 +126,7 @@ add_executable(musrview musrview.cpp)
+ target_compile_options(musrview BEFORE PRIVATE "-DHAVE_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(musrview 
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${FFTW3_INCLUDE}> 
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+diff --git a/src/classes/CMakeLists.txt b/src/classes/CMakeLists.txt
+index 5036786d..57a072ed 100644
+--- a/src/classes/CMakeLists.txt
++++ b/src/classes/CMakeLists.txt
+@@ -23,7 +23,7 @@ root_generate_dictionary(
+   PMsgBox.h  
+   LINKDEF ${MUSRFIT_INC}/PMsgBoxLinkDef.h
+   OPTIONS 
+-    -I${Boost_INCLUDE_DIR} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
++    -I${Boost_INCLUDE_DIRS} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
+     -inlineInputHeader
+   MODULE PMsgBox
+ )
+@@ -32,7 +32,7 @@ root_generate_dictionary(
+   PMusrCanvas.h  
+   LINKDEF ${MUSRFIT_INC}/PMusrCanvasLinkDef.h
+   OPTIONS 
+-    -I${Boost_INCLUDE_DIR} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
++    -I${Boost_INCLUDE_DIRS} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
+     -inlineInputHeader
+   MODULE PMusrCanvas
+ )
+@@ -41,7 +41,7 @@ root_generate_dictionary(
+   PMusrT0.h
+   LINKDEF ${MUSRFIT_INC}/PMusrT0LinkDef.h
+   OPTIONS 
+-    -I${Boost_INCLUDE_DIR} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
++    -I${Boost_INCLUDE_DIRS} -I${FFTW3_INCLUDE} -I${MUSRFIT_INC}
+     -inlineInputHeader
+   MODULE PMusrT0
+ )
+@@ -129,7 +129,7 @@ add_library(PMusr SHARED
+ #--- make sure that the include directory is found ----------------------------
+ target_include_directories(
+   PMusr BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${FFTW3_INCLUDE}> 
+     $<BUILD_INTERFACE:${HDF4_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${HDF5_INCLUDE_DIRS}>
+@@ -175,7 +175,7 @@ target_include_directories(
+ 
+ target_include_directories(
+   PRgeHandler BEFORE PRIVATE 
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${MUSRFIT_INC}>
+ )
+ 
+diff --git a/src/external/Nonlocal/prog/CMakeLists.txt b/src/external/Nonlocal/prog/CMakeLists.txt
+index 29748147..c80a35df 100644
+--- a/src/external/Nonlocal/prog/CMakeLists.txt
++++ b/src/external/Nonlocal/prog/CMakeLists.txt
+@@ -70,7 +70,7 @@ add_executable(dump_nonlocal_field dump_nonlocal_field.cpp)
+ target_compile_options(dump_nonlocal_field BEFORE PRIVATE "-DHAVE_CONFIG_H" "-DHAVE_DNLF_CONFIG_H" "${HAVE_GIT_REV_H}")
+ target_include_directories(dump_nonlocal_field 
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${ROOT_INC}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/src>
+diff --git a/src/musredit_qt5/mupp/CMakeLists.txt b/src/musredit_qt5/mupp/CMakeLists.txt
+index 3920404c..2b988f78 100644
+--- a/src/musredit_qt5/mupp/CMakeLists.txt
++++ b/src/musredit_qt5/mupp/CMakeLists.txt
+@@ -81,7 +81,7 @@ add_subdirectory(var)
+ #--- add the necessary header includes ----------------------------------------
+ target_include_directories(mupp 
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../..>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/var/include>
+diff --git a/src/musredit_qt6/mupp/CMakeLists.txt b/src/musredit_qt6/mupp/CMakeLists.txt
+index 0c99621a..f8d4e2d9 100644
+--- a/src/musredit_qt6/mupp/CMakeLists.txt
++++ b/src/musredit_qt6/mupp/CMakeLists.txt
+@@ -81,7 +81,7 @@ add_subdirectory(var)
+ #--- add the necessary header includes ----------------------------------------
+ target_include_directories(mupp
+   BEFORE PRIVATE
+-    $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../..>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/var/include>
+
