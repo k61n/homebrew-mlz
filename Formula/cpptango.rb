@@ -4,8 +4,8 @@ class Cpptango < Formula
   desc "Distributed Control System - C++ library"
   homepage "https://www.tango-controls.org/"
   url "https://gitlab.com/tango-controls/cppTango.git",
-      tag: "10.3.0"
-  version "10.3.0"
+      tag: "10.3.1"
+  version "10.3.1"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
