@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.10.0"
-  version "1.10.0"
+      tag: "v1.11.0"
+  version "1.11.0"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -16,7 +16,6 @@ class Musrfit < Formula
   depends_on "libxml2"
   depends_on "qt@5"
   depends_on "root"
-  depends_on "mlz/packages/hdf4"
   depends_on "mlz/packages/nexus-format"
 
   def install
@@ -26,18 +25,20 @@ class Musrfit < Formula
     boost_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     gsl_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix gsl`.strip
     fftw_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix fftw`.strip
-    hd4_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf4`.strip
-    hd5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
+    hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
     libxml2_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix libxml2`.strip
     nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus-format`.strip
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
+    brew_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix`.strip
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
-    system "patch -p1 < #{repo_path}/patches/musrfit.patch"
+    system "patch -p1 < #{repo_path}/patches/musrfit0.patch"
+    system "patch -p1 < #{repo_path}/patches/musrfit1.patch"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
+             "-DMUSRFIT_INSTALL_PREFIX=#{brew_path}/opt/musrfit",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_CXX_STANDARD=17",
              "-DPkgConfig=#{pkgconfig_path}",
@@ -45,8 +46,7 @@ class Musrfit < Formula
              "-DBoost_ROOT=#{boost_path}",
              "-DGSL_ROOT=#{gsl_path}",
              "-DFFTW3_ROOT=#{fftw_path}",
-             "-DHDF4_ROOT=#{hd4_path}",
-             "-DHDF5_ROOT=#{hd5_path}",
+             "-DHDF5_ROOT=#{hdf5_path}",
              "-DLibXml2=#{libxml2_path}",
              "-Dnexus=1",
              "-DNEXUS_ROOT=#{nexus_path}",
@@ -65,6 +65,7 @@ class Musrfit < Formula
       system "rm", "-rf", "*"
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
+             "-DMUSRFIT_INSTALL_PREFIX=#{brew_path}/opt/musrfit",
              "-DCMAKE_BUILD_TYPE=Release",
              "-DCMAKE_CXX_STANDARD=17",
              "-DPkgConfig=#{pkgconfig_path}",
@@ -72,8 +73,7 @@ class Musrfit < Formula
              "-DBoost_ROOT=#{boost_path}",
              "-DGSL_ROOT=#{gsl_path}",
              "-DFFTW3_ROOT=#{fftw_path}",
-             "-DHDF4_ROOT=#{hd4_path}",
-             "-DHDF5_ROOT=#{hd5_path}",
+             "-DHDF5_ROOT=#{hdf5_path}",
              "-DLibXml2=#{libxml2_path}",
              "-Dnexus=1",
              "-DNEXUS_ROOT=#{nexus_path}",
@@ -96,7 +96,7 @@ class Musrfit < Formula
       exe = "musredit"
       exe_content = <<~BASH
         #!/bin/bash
-        MUSRFITPATH=#{musrfit_path}/bin ROOTSYS=#{musrfit_path} open #{musrfit_path}/musredit.app
+        DYLD_LIBRARY_PATH=#{musrfit_path}/lib MUSRFITPATH=#{musrfit_path}/bin ROOTSYS=#{musrfit_path} open #{musrfit_path}/musredit.app
       BASH
       File.open(exe, "w") do |file|
         file.write(exe_content)

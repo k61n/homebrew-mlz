@@ -1,0 +1,19 @@
+diff --git a/src/classes/CMakeLists.txt b/src/classes/CMakeLists.txt
+index 5ade0bb8..94191821 100644
+--- a/src/classes/CMakeLists.txt
++++ b/src/classes/CMakeLists.txt
+@@ -130,7 +130,6 @@ add_library(PMusr SHARED
+ target_include_directories(
+   PMusr BEFORE PRIVATE
+     $<BUILD_INTERFACE:${Boost_INCLUDE_DIRS}>
+-    $<BUILD_INTERFACE:${FFTW3_INCLUDE}>
+     $<BUILD_INTERFACE:${HDF4_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${HDF5_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${MUSRFIT_INC}>
+@@ -141,6 +140,7 @@ target_include_directories(
+     $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src/external/nexus>
+     $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}>
+   PUBLIC
++    $<BUILD_INTERFACE:${FFTW3_INCLUDE}>
+     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+ )
