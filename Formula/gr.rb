@@ -4,8 +4,8 @@ class Gr < Formula
   desc "GR - a universal framework for visualization applications"
   homepage "https://gr-framework.org/"
   url "https://github.com/sciapp/gr.git",
-      tag: "v0.73.24"
-  version "0.73.24"
+      tag: "v0.73.26"
+  version "0.73.26"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -43,9 +43,6 @@ class Gr < Formula
     qt6_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@6`.strip
     vulkan_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix vulkan-headers`.strip
     zeromq_root = `#{HOMEBREW_PREFIX}/bin/brew --prefix zeromq`.strip
-    repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
-    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr"
-    system "#{HOMEBREW_PREFIX}/bin/git apply #{repo_path}/patches/gr1"
     mkdir "build" do
       system "#{HOMEBREW_PREFIX}/bin/cmake",
              "..",
@@ -66,7 +63,8 @@ class Gr < Formula
              "-DVulkan_INCLUDE_DIR=#{vulkan_root}",
              "-DZeroMQ_ROOT=#{zeromq_root}",
              "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
-             "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install"
+             "-DCMAKE_INSTALL_PREFIX=#{buildpath}/install",
+             "-DGR_PREFER_XCODEBUILD=OFF"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
     end
