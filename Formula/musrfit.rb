@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.11.0"
-  version "1.11.0"
+      tag: "v1.11.1"
+  version "1.11.1"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -14,7 +14,7 @@ class Musrfit < Formula
   depends_on "gsl"
   depends_on "fftw"
   depends_on "libxml2"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "root"
   depends_on "mlz/packages/nexus-format"
 
@@ -29,7 +29,7 @@ class Musrfit < Formula
     libxml2_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix libxml2`.strip
     nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus-format`.strip
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
-    qt5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt@5`.strip
+    qt_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
     brew_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix`.strip
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
@@ -52,9 +52,9 @@ class Musrfit < Formula
              "-DNEXUS_ROOT=#{nexus_path}",
              "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus",
              "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json",
-             "-Dqt_version=5",
+             "-Dqt_version=6",
              "-Dqt_based_tools=0",
-             "-DCMAKE_PREFIX_PATH=#{qt5_path}",
+             "-DCMAKE_PREFIX_PATH=#{qt_path}",
              "-DROOT_ROOT=#{root_path}",
              "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
              "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
@@ -79,18 +79,18 @@ class Musrfit < Formula
              "-DNEXUS_ROOT=#{nexus_path}",
              "-DNEXUS_INCLUDE_DIR=#{nexus_path}/include/nexus",
              "-Dnlohmann_json_DIR=#{nlohmann_json_path}/share/cmake/nlohmann_json",
-             "-Dqt_version=5",
+             "-Dqt_version=6",
              "-Dqt_based_tools=1",
-             "-DCMAKE_PREFIX_PATH=#{qt5_path}",
+             "-DCMAKE_PREFIX_PATH=#{qt_path}",
              "-DROOT_ROOT=#{root_path}",
              "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
              "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
-      prefix.install "src/musredit_qt5/mupp/mupp.app"
-      prefix.install "src/musredit_qt5/musredit/musredit.app"
-      prefix.install "src/musredit_qt5/musrStep/musrStep.app"
-      prefix.install "src/musredit_qt5/musrWiz/musrWiz.app"
+      prefix.install "src/musredit_qt6/mupp/mupp.app"
+      prefix.install "src/musredit_qt6/musredit/musredit.app"
+      prefix.install "src/musredit_qt6/musrStep/musrStep.app"
+      prefix.install "src/musredit_qt6/musrWiz/musrWiz.app"
 
       musrfit_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix musrfit`.strip
       exe = "musredit"
