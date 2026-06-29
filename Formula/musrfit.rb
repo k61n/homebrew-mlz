@@ -4,8 +4,8 @@ class Musrfit < Formula
   desc "muSR and beta-NMR data analysis package."
   homepage "https://lmu.web.psi.ch/musrfit/user/html/index.html"
   url "https://bitbucket.org/muonspin/musrfit.git",
-      tag: "v1.11.1"
-  version "1.11.1"
+      tag: "v1.11.2"
+  version "1.11.2"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
@@ -16,12 +16,13 @@ class Musrfit < Formula
   depends_on "libxml2"
   depends_on "qt"
   depends_on "root"
+  depends_on "vdt"
   depends_on "mlz/packages/nexus-format"
 
   def install
     cores = `sysctl -n hw.ncpu`.strip
-    pkgconfig_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix pkg-config`.strip
     git_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix git`.strip
+    pkgconfig_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix pkg-config`.strip
     boost_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix boost`.strip
     gsl_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix gsl`.strip
     fftw_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix fftw`.strip
@@ -30,6 +31,7 @@ class Musrfit < Formula
     nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus-format`.strip
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
     qt_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix qt`.strip
+    vdt_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix vdt`.strip
     root_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix root`.strip
     brew_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix`.strip
     repo_path = `#{HOMEBREW_PREFIX}/bin/brew --repository mlz/packages`.strip
@@ -56,8 +58,8 @@ class Musrfit < Formula
              "-Dqt_based_tools=0",
              "-DCMAKE_PREFIX_PATH=#{qt_path}",
              "-DROOT_ROOT=#{root_path}",
-             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
-             "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
+             "-DVDT_LIBRARY=#{vdt_path}/lib/libvdt.dylib",
+             "-DVDT_INCLUDE_DIR=#{vdt_path}/include",
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--install", "."
@@ -83,8 +85,8 @@ class Musrfit < Formula
              "-Dqt_based_tools=1",
              "-DCMAKE_PREFIX_PATH=#{qt_path}",
              "-DROOT_ROOT=#{root_path}",
-             "-DVDT_LIBRARY=#{root_path}/lib/root/libvdt.dylib",
-             "-DVDT_INCLUDE_DIR=#{root_path}/include/root",
+             "-DVDT_LIBRARY=#{vdt_path}/lib/libvdt.dylib",
+             "-DVDT_INCLUDE_DIR=#{vdt_path}/include",
              "-DCMAKE_INSTALL_PREFIX=./install"
       system "#{HOMEBREW_PREFIX}/bin/cmake", "--build", ".", "--parallel", cores.to_s
       prefix.install "src/musredit_qt6/mupp/mupp.app"
