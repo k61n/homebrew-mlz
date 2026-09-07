@@ -4,8 +4,8 @@ class Hdf4 < Formula
   desc "Multi-object file format library."
   homepage "https://www.hdfgroup.org/solutions/hdf4/"
   url "https://github.com/HDFGroup/hdf4.git",
-      tag: "hdf4.3.1"
-  version "4.3.1"
+      tag: "hdf4.4.0"
+  version "4.4.0"
 
   depends_on "cmake" => :build
   depends_on "git" => :build
