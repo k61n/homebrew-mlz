@@ -27,6 +27,7 @@ class Musrfit < Formula
     gsl_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix gsl`.strip
     fftw_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix fftw`.strip
     hdf5_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix hdf5`.strip
+    libomp_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix libomp`.strip
     libxml2_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix libxml2`.strip
     nexus_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nexus-format`.strip
     nlohmann_json_path = `#{HOMEBREW_PREFIX}/bin/brew --prefix nlohmann-json`.strip
@@ -49,6 +50,7 @@ class Musrfit < Formula
              "-DGSL_ROOT=#{gsl_path}",
              "-DFFTW3_ROOT=#{fftw_path}",
              "-DHDF5_ROOT=#{hdf5_path}",
+             "-DLibOMP=#{libomp_path}",
              "-DLibXml2=#{libxml2_path}",
              "-Dnexus=1",
              "-DNEXUS_ROOT=#{nexus_path}",
@@ -76,6 +78,7 @@ class Musrfit < Formula
              "-DGSL_ROOT=#{gsl_path}",
              "-DFFTW3_ROOT=#{fftw_path}",
              "-DHDF5_ROOT=#{hdf5_path}",
+             "-DLibOMP=#{libomp_path}",
              "-DLibXml2=#{libxml2_path}",
              "-Dnexus=1",
              "-DNEXUS_ROOT=#{nexus_path}",
