@@ -17,7 +17,7 @@ class Pytango < Formula
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
       py_minor = python.gsub("python@3.", "").to_i
-      next unless py_minor >= 10
+      next unless py_minor >= 10 && py_minor < 15
 
       python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
       system python_exe, "-m", "pip", "install", *std_pip_args,
@@ -29,7 +29,7 @@ class Pytango < Formula
     pythons = `#{HOMEBREW_PREFIX}/bin/brew list | grep python@`.strip.split("\n")
     pythons.each do |python|
       py_minor = python.gsub("python@3.", "").to_i
-      next unless py_minor >= 10
+      next unless py_minor >= 10 && py_minor < 15
 
       python_exe = "#{HOMEBREW_PREFIX}/opt/#{python}/bin/#{python.gsub("@", "")}"
       system python_exe, "-c", "from tango import DeviceProxy"
