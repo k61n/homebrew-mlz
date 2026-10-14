@@ -4,8 +4,8 @@ class PythonTypingExtensions < Formula
   desc "Backported and Experimental Type Hints for Python 3.8+"
   homepage "https://github.com/python/typing_extensions"
   url "https://github.com/python/typing_extensions.git",
-      tag: "4.13.2"
-  version "4.13.2"
+      tag: "4.16.0"
+  version "4.16.0"
 
   depends_on "python"
   depends_on "python-setuptools"
